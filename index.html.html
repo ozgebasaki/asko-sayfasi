@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Aşko Sayfası</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Comic Sans MS", cursive;
+        background: #fff0fb;
+        overflow: hidden;
+      }
+
+      .kutu {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: #a64d79;
+        background-color: #ffe6f9;
+        border: 4px dotted #d8b5ff;
+        border-radius: 25px;
+        padding: 30px;
+        margin: 100px auto;
+        width: 80%;
+        max-width: 500px;
+        box-shadow: 0 0 15px #f3d6ff;
+      }
+
+      .kutu h1 {
+        font-size: 45px;
+        color: #cc66a0;
+      }
+
+      .kutu p {
+        font-size: 22px;
+        margin: 10px 0;
+      }
+
+      /* ✨ Yıldızlar ✨ */
+      .yildiz {
+        position: absolute;
+        background: white;
+        width: 2px;
+        height: 2px;
+        border-radius: 50%;
+        animation: kayanYildiz 10s linear infinite;
+        opacity: 0.8;
+      }
+
+      @keyframes kayanYildiz {
+        0% {
+          transform: translateY(0) translateX(0);
+        }
+        100% {
+          transform: translateY(100vh) translateX(50px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ✨ 30 tane yıldız ekleyelim -->
+    <script>
+      for (let i = 0; i < 30; i++) {
+        let yildiz = document.createElement("div");
+        yildiz.className = "yildiz";
+        yildiz.style.left = Math.random() * 100 + "vw";
+        yildiz.style.top = Math.random() * -100 + "vh";
+        yildiz.style.animationDuration = (5 + Math.random() * 5) + "s";
+        yildiz.style.width = yildiz.style.height = (1 + Math.random() * 2) + "px";
+        document.body.appendChild(yildiz);
+      }
+    </script>
+
+    <div class="kutu">
+      <h1>Merhaba Aşko 💖</h1>
+      <p>Sen sıradan biri değilsin, özelsin!</p>
+      <p>Doğarken yıldız tozu serptiler ✨</p>
+      <p>Enerjinle odayı aydınlatıyorsun 😇</p>
+      <p>Herkes bir tane, sen limited edition 😘</p>
+    </div>
+  </body>
+</html>
